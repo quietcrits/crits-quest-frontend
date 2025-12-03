@@ -39,12 +39,12 @@ export function LoginForm() {
       )}
 
       <Input
-        {...register('email')}
-        label="Email"
-        type="email"
-        placeholder="your@email.com"
-        error={errors.email?.message}
-        autoComplete="email"
+        {...register('username')}
+        label="Username"
+        type="text"
+        placeholder="Enter your username"
+        error={errors.username?.message}
+        autoComplete="username"
       />
 
       <Input

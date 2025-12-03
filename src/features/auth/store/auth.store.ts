@@ -4,7 +4,7 @@ import { tokenStorage } from '../utils/token-storage';
 import { tokenValidator } from '../utils/token-validator';
 
 export interface User {
-  email: string;
+  username: string;
   roles: string[];
 }
 
@@ -39,7 +39,7 @@ export const useAuthStore = create<AuthState>()(
         const payload = tokenValidator.getTokenPayload(accessToken);
         if (payload) {
           const user: User = {
-            email: payload.username,
+            username: payload.username,
             roles: payload.roles,
           };
           set({ user, isAuthenticated: true, error: null });
@@ -64,7 +64,7 @@ export const useAuthStore = create<AuthState>()(
           const payload = tokenValidator.getTokenPayload(accessToken);
           if (payload) {
             const user: User = {
-              email: payload.username,
+              username: payload.username,
               roles: payload.roles,
             };
             set({ user, isAuthenticated: true, isLoading: false });
